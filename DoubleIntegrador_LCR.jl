@@ -15,21 +15,22 @@ set_optimizer_attribute(model, "ms_maxsolves", 200);
 
 
 #Parameters
-A = [1 1; 0 1]
-B = [2;1]
-C = [1 0;0 1]
-
-X = [0.8 0; -1 0; 0 1; 0 -1]
-phi = ones(lx)
-U = [1.2; -1.5]
-varphi = ones(lu)
-
 nx = 2; #Number of states or rows of the matrix A
 nu = 1; #Number of inputs or columns of the matrix B 
 ny = 2; #Number of output or rows of the matrix C
 
 rx = 4; #Number of rows of the matrix X 
 ru = 2; #Number of rows of the matrix U
+
+A = [1 1; 0 1]
+B = [2;1]
+C = [1 0;0 1]
+
+X = [0.8 0; -1 0; 0 1; 0 -1]
+phi = ones(rx)
+U = [1.2; -1.5]
+varphi = ones(ru)
+
 
 #Definition of the decision variables
 @variable(model, K[1:nu,1:ny])

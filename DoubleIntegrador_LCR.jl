@@ -6,7 +6,7 @@ using JuMP, NEOSServer
 
 #Neos configuration
 model = Model() do
-    return NEOSServer.Optimizer(; email = "jacksongernesto@hotmail.com", solver = "Knitro")
+    return NEOSServer.Optimizer(; email = "your_email@domain", solver = "Knitro")
 end
 
 #Solver configuration

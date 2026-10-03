@@ -49,7 +49,7 @@ psix = [1 0 -1 0 1 1 -1 -1; 0 1 0 -1 1 -1 1 -1] #Choosen direction, \Psi_{x}
 @variable(model, psiu[1:nu, 1:t] )
 
 #Objective function
-ppi = 0.5; #Choosen wheighting factor \pi
+ppi = 0.1; #Choosen wheighting factor \pi
 @objective(model, Min,  (ppi)*lambda - (1-ppi)sum(gamma)/t)
 
 #Constraints
@@ -70,7 +70,7 @@ M*ones(rl) <= ones(ru);
 J*L == I(nx);
 
 #Directions inclusion condition, matrix form
-Lx*psix*Diagonal(gamma) + Lu*psiu .<= ones(rl,t);
+L*psix*Diagonal(gamma) .<= ones(rl,t);
 end )
 
 print(model) #Print optimization problem

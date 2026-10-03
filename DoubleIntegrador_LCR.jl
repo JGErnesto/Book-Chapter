@@ -11,7 +11,7 @@ end
 
 #Solver configuration
 set_optimizer_attribute(model, "ms_enable", 1); #Multistart
-set_optimizer_attribute(model, "ms_maxsolves", 200); 
+set_optimizer_attribute(model, "ms_maxsolves", 0); 
 
 
 #Parameters
@@ -39,7 +39,6 @@ varphi = ones(ru)
 @variable(model, 0 <= lambda <= 0.999)
 
 #Objective function
-ppi = 0.5; #Choosen wheighting factor \pi
 @objective(model, Min,  lambda)
 
 @constraints(model, begin

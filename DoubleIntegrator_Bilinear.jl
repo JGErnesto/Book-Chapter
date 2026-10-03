@@ -11,7 +11,7 @@ end
 
 #Solver configuration
 set_optimizer_attribute(model, "ms_enable", 1); #Multistart
-set_optimizer_attribute(model, "ms_maxsolves", 200); 
+set_optimizer_attribute(model, "ms_maxsolves", 0); 
 
 
 #Parameters

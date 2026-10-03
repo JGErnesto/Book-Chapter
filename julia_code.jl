@@ -11,7 +11,7 @@ end
 
 #Solver configuration
 set_optimizer_attribute(model, "ms_enable", 1); #Multistart
-set_optimizer_attribute(model, "ms_maxsolves", 200); 
+set_optimizer_attribute(model, "ms_maxsolves", 0); 
 
 # System data - Quasi-LPV system
 A = zeros(2,2,2)
@@ -41,6 +41,7 @@ ru = 2; # Number of rows of the matrix U
 # Design parameters
 t = 8; # Number of directions, \bar{t}
 psix = [1 0 -1 0 1 1 -1 -1; 0 1 0 -1 1 -1 1 -1]  # Chosen directions \Psi_{x} 
+rl = 9; # Number of rows of L
 
 # Auxiliary bound parameter
 bGamma = 100;
